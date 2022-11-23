@@ -11,7 +11,7 @@ dotenv.config()
 
 mongoose
   .connect(
-    "mongodb+srv://MAGuzman:11dr0vv55@P!@cluster0.m55iqqj.mongodb.net/Linkup?retryWrites=true&w=majority",
+    process.env.MONGO_DB,
     { useNewUrlParser: true, useUnifiedTopology: true}
   )
-  .then(() => app.listen(5000, () => console.log("Listening")));
+  .then(() => app.listen(process.env.PORT, () => console.log("Listening")));

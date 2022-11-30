@@ -2,8 +2,13 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import AuthRoute from './Routes/AuthRoute.js';
+
+// routes
 
 const app = express();
+
+// middleware
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
@@ -19,3 +24,7 @@ mongoose
       console.log(`Listening at ${process.env.PORT}`)
     )
   ).catch ((error) => console.log(error));
+
+
+  // usage of routes
+  app.use('/auth', AuthRoute)

@@ -23,6 +23,16 @@ const UserSchema = mongoose.Schema(
             default: false
         },
         profilePicture: String,
-        
-    }
+        coverPicture: String,
+        about: String,
+        livesin: String,
+        worksAt: String,
+        relationship: String,
+        followers: [],
+        following: [],
+    },
+    {timestamps: true}
 )
+
+const UserModel = mongoose.model("Users, UserSchema");
+export default UserModel

@@ -23,7 +23,8 @@ mongoose
     app.listen(process.env.PORT, () =>
       console.log(`Listening at ${process.env.PORT}`)
     )
-  ).catch ((error) => console.log(error));
+  )
+  .catch((error) => console.log(error));
 
 
   // usage of routes

@@ -17,5 +17,10 @@ export const getUser = async(req, res) => {
     } catch (error) {
         res.status(500).json(error);
     }
-    const user = await UserModel.findById(id);
+    // const user = await UserModel.findById(id);
+}
+
+//update a user
+export const updateUser = async(req, res) => {
+    const id = req.params.id
 }

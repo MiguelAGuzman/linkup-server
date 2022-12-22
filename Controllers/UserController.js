@@ -1,4 +1,5 @@
 import UserModel from "../Models/userModel.js";
+import bcrypt from 'bcrypt'
 
 //get a User
 export const getUser = async(req, res) => {
@@ -27,7 +28,16 @@ export const updateUser = async(req, res) => {
 
     if(id === currentUserId || currentUserAdminStatus) {
         try {
+
+            if(password) {
+                const salt = bcrypt.genSalt(10);
+                req.body.password = await bcrypt.hash(password, salt)
+            }
+
+
             const user = await UserModel.findByIdAndUpdate(id, req.body, {new: true})
+
+            res.status(200).json(user)
         } catch (error) {
             res.status(500).json(error)
         }

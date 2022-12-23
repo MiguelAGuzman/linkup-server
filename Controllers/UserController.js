@@ -30,7 +30,7 @@ export const updateUser = async(req, res) => {
         try {
 
             if(password) {
-                const salt = bcrypt.genSalt(10);
+                const salt = await bcrypt.genSalt(10);
                 req.body.password = await bcrypt.hash(password, salt)
             }
 
@@ -41,5 +41,7 @@ export const updateUser = async(req, res) => {
         } catch (error) {
             res.status(500).json(error)
         }
+    } else {
+        res.status(403).json("Access denied, you can only update your own profile.")
     }
 }

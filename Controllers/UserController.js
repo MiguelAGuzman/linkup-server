@@ -49,7 +49,7 @@ export const updateUser = async(req, res) => {
 
 //delete user
 export const deleteUser = async(req, res) => {
-    const id = <req className="params id">
-        
-    </req>
+    const id = req.params.id
+
+    const {currentUserId, currentUserAdminStatus} = req.body
 }

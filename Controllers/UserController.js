@@ -52,4 +52,12 @@ export const deleteUser = async(req, res) => {
     const id = req.params.id
 
     const {currentUserId, currentUserAdminStatus} = req.body
+
+    if (currentUserId === id || currentUserAdminStatus) {
+        try {
+            
+        } catch (error) {
+            
+        }
+    }
 }

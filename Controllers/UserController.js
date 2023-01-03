@@ -55,7 +55,8 @@ export const deleteUser = async(req, res) => {
 
     if (currentUserId === id || currentUserAdminStatus) {
         try {
-            
+            await UserModel.findByIdAndDelete(id)
+            res.status(200).json
         } catch (error) {
             
         }

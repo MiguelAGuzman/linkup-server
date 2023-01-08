@@ -64,3 +64,11 @@ export const deleteUser = async(req, res) => {
         res.status(403).json("Access denied, you can only delete your own profile.")
     }
 }
+
+
+//Follow a user
+export const followUser = async(req, res) => {
+    const id = req.params.id
+
+    
+}

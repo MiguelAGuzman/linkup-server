@@ -70,5 +70,7 @@ export const deleteUser = async(req, res) => {
 export const followUser = async(req, res) => {
     const id = req.params.id
 
+    const {currentUserId} = req.body
+
     
 }

@@ -72,5 +72,7 @@ export const followUser = async(req, res) => {
 
     const {currentUserId} = req.body
 
-    
+    if (currentUserId === id) {
+        res.status(403).json("Action not allowed")
+    }
 }

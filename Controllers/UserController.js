@@ -74,5 +74,11 @@ export const followUser = async(req, res) => {
 
     if (currentUserId === id) {
         res.status(403).json("Action not allowed")
+    } else {
+        try {
+            
+        } catch (error) {
+            
+        }
     }
 }

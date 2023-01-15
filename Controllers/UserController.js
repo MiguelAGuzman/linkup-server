@@ -76,7 +76,7 @@ export const followUser = async(req, res) => {
         res.status(403).json("Action not allowed")
     } else {
         try {
-            
+            const followUser = UserModel.findById(followUser)
         } catch (error) {
             res.status(500).json(error);
         }

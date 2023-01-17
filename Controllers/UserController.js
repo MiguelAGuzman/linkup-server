@@ -77,6 +77,7 @@ export const followUser = async(req, res) => {
     } else {
         try {
             const followUser = UserModel.findById(followUser)
+            const followingUser = UserModel.findById(currentUserId)
         } catch (error) {
             res.status(500).json(error);
         }

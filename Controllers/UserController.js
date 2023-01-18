@@ -78,6 +78,9 @@ export const followUser = async(req, res) => {
         try {
             const followUser = UserModel.findById(followUser)
             const followingUser = UserModel.findById(currentUserId)
+
+            if(!followUser.followers.includes(currentUserId))
+            
         } catch (error) {
             res.status(500).json(error);
         }

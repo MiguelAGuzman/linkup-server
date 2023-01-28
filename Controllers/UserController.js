@@ -76,8 +76,8 @@ export const followUser = async(req, res) => {
         res.status(403).json("Action not allowed")
     } else {
         try {
-            const followUser = UserModel.findById(followUser)
-            const followingUser = UserModel.findById(currentUserId)
+            const followUser = await UserModel.findById(id)
+            const followingUser = await UserModel.findById(currentUserId)
 
             if(!followUser.followers.includes(currentUserId)){
                 await followUser.updateOne({$push : {followers: currentUserId}})

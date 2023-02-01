@@ -108,11 +108,11 @@ export const UnFollowUser = async(req, res) => {
             const followingUser = await UserModel.findById(currentUserId)
 
             if(followUser.followers.includes(currentUserId)){
-                await followUser.updateOne({$push : {followers: currentUserId}})
-                await followingUser.updateOne({$push : {followers: is}})
-                res.status(200).json("User followed!")
+                await followUser.updateOne({$pull : {followers: currentUserId}})
+                await followingUser.updateOne({$pull : {followers: is}})
+                res.status(200).json("User unfollowed!")
             } else {
-                res.status(403).json("User is already followed by you.")
+                res.status(403).json("User is not followed by you.")
             }
 
         } catch (error) {

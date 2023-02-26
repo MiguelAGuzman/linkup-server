@@ -1,0 +1,1 @@
+import PostModel from "../Models/postModel.js";

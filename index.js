@@ -31,3 +31,4 @@ mongoose
   // usage of routes
   app.use('/auth', AuthRoute)
   app.use('/user', UserRoute)
+  app.use('/post', PostRoute)

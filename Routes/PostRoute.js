@@ -3,7 +3,7 @@ import { createPost } from "../Controller/PostController";
 
 const router = express.Router()
 
-router.get('/', createPost)
+router.post('/', createPost)
 
 // router.get('/', async (req, res) => {
 //     res.send("Post Route")

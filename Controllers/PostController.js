@@ -27,3 +27,6 @@ export const getPost = async(req, res) => {
         res.status(500).json(error)
     }
 }
+
+
+//Update a post

@@ -39,6 +39,8 @@ export const updatePost = async (req, res) => {
         if(post.userId === userId) {
             await post.updateOne({$set : req.body})
             res.status(200).json("Post Updated")
+        } else {
+            res.status(403).json("Action forbidden.")
         }
 
     } catch (error) {

@@ -47,3 +47,9 @@ export const updatePost = async (req, res) => {
         res.status(500).json(error)
     }
 }
+
+
+//Delete a post
+export const deletePost = async (req, res) => {
+    
+}

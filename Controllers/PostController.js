@@ -55,6 +55,7 @@ export const deletePost = async (req, res) => {
     const {userId} = req.body;
 
     try {
+        const post = await PostModel.findById(id);
         
     } catch (error) {
         

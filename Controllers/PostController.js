@@ -56,6 +56,11 @@ export const deletePost = async (req, res) => {
 
     try {
         const post = await PostModel.findById(id);
+        if (condition) {
+            
+        } else {
+            
+        }
         
     } catch (error) {
         

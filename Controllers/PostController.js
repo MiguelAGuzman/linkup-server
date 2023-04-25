@@ -57,7 +57,7 @@ export const deletePost = async (req, res) => {
     try {
         const post = await PostModel.findById(id);
         if (post.userId === userId) {
-            
+            await post.deleteOne();
         } else {
             
         }

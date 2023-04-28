@@ -60,7 +60,7 @@ export const deletePost = async (req, res) => {
             await post.deleteOne();
             res.status(200).json("Post deleted successfully")
         } else {
-            
+            res.status(403).json("Action forbidden.")
         }
         
     } catch (error) {

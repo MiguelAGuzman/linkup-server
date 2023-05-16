@@ -76,7 +76,7 @@ export const likePost = async (req, res) => {
     const {userId} = req.body;
 
     try {
-        
+        const post = await PostModel.findOneById(id);
     } catch (error) {
         
     }

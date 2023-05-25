@@ -85,3 +85,9 @@ export const likePost = async (req, res) => {
         res.status(500).json(error)
     }
 }
+
+
+// Get Timeline Posts
+export const getTimelinePosts = async (req, res) => {
+
+}

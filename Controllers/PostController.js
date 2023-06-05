@@ -93,7 +93,11 @@ export const getTimelinePosts = async (req, res) => {
     const userId = req.params.id
     try {
         const currentUserPosts = await PostModel.find({userId: userId})
-        const followingPosts = await User
+        const followingPosts = await UserModel.aggregate([
+            $match: {
+                _id : userId
+            }
+        ])
     } catch (error) {
         res.status(500).json(error)
     }

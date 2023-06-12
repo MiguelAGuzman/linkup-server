@@ -96,6 +96,11 @@ export const getTimelinePosts = async (req, res) => {
         const followingPosts = await UserModel.aggregate([
             $match: {
                 _id : new mongoose.Types.ObjectId(userId)
+            },
+            {
+                $lookup: {
+                    
+                }
             }
         ])
     } catch (error) {

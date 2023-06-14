@@ -99,7 +99,7 @@ export const getTimelinePosts = async (req, res) => {
             },
             {
                 $lookup: {
-                    
+                    from : "posts",
                 }
             }
         ])

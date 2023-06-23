@@ -100,6 +100,7 @@ export const getTimelinePosts = async (req, res) => {
             {
                 $lookup: {
                     from : "posts",
+                    localField: "following",
                 }
             }
         ])

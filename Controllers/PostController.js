@@ -104,6 +104,11 @@ export const getTimelinePosts = async (req, res) => {
                     foreignField : "userId",
                     as : "followingPosts"
                 }
+            },
+            {
+                $project: {
+                    
+                }
             }
         ])
     } catch (error) {

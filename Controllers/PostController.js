@@ -108,6 +108,7 @@ export const getTimelinePosts = async (req, res) => {
             {
                 $project: {
                     followingPosts : 1,
+                    _id: 0
                 }
             }
         ])
